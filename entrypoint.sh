@@ -6,25 +6,9 @@ docker service rm integration_portainer
 
 rm -rf /tmp/integration/*
 
-# sleep 3
-# docker network rm integration_net
-# sleep 3
-
 echo "Copying Portainer data"
 
 cp -rp /tmp/data/* /tmp/integration/
-
-echo "Deploying Portainer agent"
-
-# docker network create integration_net -d overlay
-#
-# docker service create --name integration_agent \
-# --network integration_net \
-# --mode global \
-# --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
-# --mount type=bind,src=//var/lib/docker/volumes,dst=/var/lib/docker/volumes \
-# --mount type=bind,src=//,dst=/host \
-# portainer/agent:latest
 
 echo "Deploying Portainer"
 
