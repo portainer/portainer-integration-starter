@@ -1,7 +1,7 @@
 #!/bin/bash
 
 service_name="portainer-integration-${PORTAINER_PORT:-9100}"
-data_folder="/tmp/integration-${PORTAINER_PORT:-9100}"
+data_folder="/tmp/integration/${PORTAINER_PORT:-9100}"
 
 echo "Cleanup environment"
 
