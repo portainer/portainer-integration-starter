@@ -3,6 +3,8 @@
 service_name="portainer-integration-${PORTAINER_PORT:-9100}"
 data_folder="/tmp/integration/${PORTAINER_PORT:-9100}"
 
+mkdir -pv "${data_folder}"
+
 echo "Cleanup environment"
 
 docker service rm "${service_name}"
