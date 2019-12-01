@@ -20,6 +20,7 @@ echo "Deploying Portainer"
 docker service create --name ${service_name} \
 --network portainer_agent_network \
 --publish ${PORTAINER_PORT:-9100}:9000 \
+--publish ${PORTAINER_EDGE_PORT:-10000}:8000 \
 --replicas=1 \
 --mount type=bind,src=/${data_folder},dst=/data \
 --constraint 'node.role == manager' \
